@@ -1,0 +1,30 @@
+{
+    "name": "alg/wwhlight",
+    "type": "phpbb-extension",
+    "description": "Who was here (light version).",
+    "homepage": "https://github.com/alg5/wwhlight",
+    "version": "1.0.0",
+    "time": "2015-11-06",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Alg",
+            "homepage": "http://www.chugunok.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "extra": {
+        "display-name": "Who was here (light)",
+        "soft-require": {
+        "phpbb/phpbb": "3.1.*@dev"
+        },
+        "version-check": {
+            "host": "alg5.github.io",
+            "directory": "/versions",
+            "filename": "wwhlight.json"
+        }
+    }
+}

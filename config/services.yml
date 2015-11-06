@@ -1,0 +1,22 @@
+    alg.wwhlight.listener:
+        class: alg\wwhlight\event\listener
+        arguments:
+            - @config
+            - @template
+            - @user
+            - @dbal.conn
+            - %core.root_path%
+            - %core.php_ext%
+            - @auth
+        tags:
+            - { name: event.listener }
+    alg.wwhlight.cron.task.wwhlight_calc_records:
+        class: alg\wwhlight\cron\task\wwhlight_calc_record
+        arguments:
+            - @config
+            - @dbal.conn
+            - @auth
+        calls:
+            - [set_name, [cron.task.wwhlight_calc_record]]
+        tags:
+            - { name: cron.task }
