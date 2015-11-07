@@ -29,9 +29,7 @@ if (empty($lang) || !is_array($lang))
 
 
 $lang = array_merge($lang, array(
-	 // for the normal sites
-	//'WHO_WAS_HERE'					=> 'Кто сегодня был на конференции',
-	'WWHLIGHT_TITLE'		=> 'Спасибо заглянувшим сегодня в "Местечко" :',
+	'WWHLIGHT_TITLE'		=> 'Кто сегодня был на конференции :',
 	'WWHLIGHT_LATEST'			=> 'последнее посещение: %s',
 
 	'WWHLIGHT_TOTAL'			=> array(
