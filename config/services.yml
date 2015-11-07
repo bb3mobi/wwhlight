@@ -1,3 +1,13 @@
+services:
+    alg.wwhlight.helper:
+        class: alg\wwhlight\core\who_was_here
+        arguments:
+            - @template
+            - @config
+            - @user
+            - @auth
+            - @dbal.conn
+            - %core.table_prefix%
     alg.wwhlight.listener:
         class: alg\wwhlight\event\listener
         arguments:
@@ -10,7 +20,7 @@
             - @auth
         tags:
             - { name: event.listener }
-    alg.wwhlight.cron.task.wwhlight_calc_records:
+    alg.wwhlight.cron.task.wwhlight_calc_record:
         class: alg\wwhlight\cron\task\wwhlight_calc_record
         arguments:
             - @config
