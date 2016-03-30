@@ -71,11 +71,11 @@ class listener implements EventSubscriberInterface
 
 		foreach ($rowset as $row)
 		{
-			$last_visit_time =  sprintf($this->user->lang['WWHLIGHT_LATEST'], $this->user->format_date($row['user_lastvisit'], 'H:i') );
-			$hover_info = $last_visit_time ? ' title="' . $last_visit_time . '"' : '';
 			if ($row['user_allow_viewonline'])
 			{
-				$user_online_link[$row['user_id']] = '<span' . $hover_info . '>' . get_username_string(($row['user_type'] <> USER_IGNORE) ? 'full' : 'no_profile', $row['user_id'], $row['username'], $row['user_colour']) . '</span>';
+				$last_visit_time =  sprintf($this->user->lang['WWHLIGHT_LATEST'], $this->user->format_date($row['user_lastvisit'], 'H:i'));
+				$username = get_username_string(($row['user_type'] <> USER_IGNORE) ? 'full' : 'no_profile', $row['user_id'], $row['username'], $row['user_colour']);
+				$user_online_link[$row['user_id']] = '<span title="' . (($last_visit_time) ? $last_visit_time : '') . '">' . $username . '</span>';
 				$this->counter_users_reg++;
 			}
 			else
