@@ -23,7 +23,7 @@ class wwhlight_calc_record extends \phpbb\cron\task\base
 					" FROM  " . USERS_TABLE . 
 					" WHERE user_type <>" . USER_IGNORE . 
 					" AND DATE(FROM_UNIXTIME (user_lastvisit)) >= SUBDATE(CURDATE(),1)";
-		$this->db->sql_query($sql);
+		$result = $this->db->sql_query($sql);
 		$counter = (int) $this->db->sql_fetchfield('counter');
 		$this->db->sql_freeresult($result);
 		if($counter > $this->config['wwhlight_record'])
